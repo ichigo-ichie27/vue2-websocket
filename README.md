@@ -1,19 +1,25 @@
-# vue2-websocket
+# websocket 原理
 
-## Project setup
-```
-npm install
-```
+# 聊天室
+  - 前端
+    
+    1. login
+        input username(6) -> localstorage -> enter the chatting room
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+    2. home
+        localstorage -> username / message / id / time -> 后端socket服务
 
-### Compiles and minifies for production
-```
-npm run build
-```
+    open
+    close
+    error
+    message 接收广播来的数据    
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+  - 后端
+
+        接收 -> 消息数据 -> 广播给所有连接到socket服务的客户端
+
+    open
+    close
+    error
+    connection
+        message 接收客户端发送的消息数据 -> 广播
